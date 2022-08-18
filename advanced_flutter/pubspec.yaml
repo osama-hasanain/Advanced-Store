@@ -29,22 +29,34 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_svg: ^1.0.3
+  retrofit: ^3.0.1+1
+  analyzer: ^4.1.0
+  dio: ^4.0.6
+  json_serializable: ^6.2.0
+  json_annotation: 4.5.0
+  dartz: ^0.10.1
+  internet_connection_checker: ^0.0.1+4
+  pretty_dio_logger: ^1.1.1
+  shared_preferences: ^2.0.15
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  freezed: ^2.1.0+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  retrofit_generator: ^4.0.1  
+  build_runner: ^2.1.11
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -58,8 +70,17 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+   - assets/images/final_logo.png
+   - assets/images/onboarding_logo.svg
+   - assets/images/onboarding_logo2.svg
+   - assets/images/onboarding_logo3.svg
+   - assets/images/onboarding_logo4.svg
+   - assets/images/hollow_solid_ic.svg
+   - assets/images/solid_circle_ic.svg
+   - assets/images/left_arrow_ic.svg
+   - assets/images/right_circle_ic.svg
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -73,10 +94,19 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Montserrat-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Montserrat-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Montserrat-Light.ttf
+          weight: 300
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
