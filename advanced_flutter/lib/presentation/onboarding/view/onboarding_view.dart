@@ -1,3 +1,5 @@
+import 'package:advanced_flutter/app/app_prefs.dart';
+import 'package:advanced_flutter/app/di.dart';
 import 'package:advanced_flutter/domain/model/models.dart';
 import 'package:advanced_flutter/presentation/onboarding/viewmodel/onboarding_viewmodel.dart';
 import 'package:advanced_flutter/presentation/resources/assets_manager.dart';
@@ -21,7 +23,8 @@ class OnBoardingView extends StatefulWidget {
 class _OnBoardingViewState extends State<OnBoardingView> {
 
   final PageController _pageController = PageController();
-  OnBoardingViewModel _viewModel = OnBoardingViewModel();
+  final OnBoardingViewModel _viewModel = OnBoardingViewModel();
+  final AppPreferences _appPreferences = instance<AppPreferences>();
 
   _bind(){
     _viewModel.start();
@@ -29,6 +32,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
   @override
   void initState() {
+    _appPreferences.setOnBoardingScreenViewed();
     _bind();
     super.initState();
   }
@@ -72,8 +76,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               Align(
                 alignment: AlignmentDirectional.centerEnd,
                 child: TextButton(
-                  onPressed: ()=>
-                      Navigator.pushReplacementNamed(context,Routes.loginRoute),
+                  onPressed: (){
+                    Navigator.pushReplacementNamed(context,Routes.loginRoute);
+                  },
                   child: Text(
                     AppStrings.skip,
                     style: Theme.of(context).textTheme.titleMedium,

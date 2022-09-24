@@ -56,10 +56,16 @@ ThemeData getApplicationTheme(){
         getRegularStyle(color: ColorManager.darkGrey,fontSize: FontSize.s14),
       titleMedium:
         getMediumStyle(color: ColorManager.primary,fontSize: FontSize.s14),
-      bodyLarge:
-        getRegularStyle(color: ColorManager.grey1),
+      titleSmall:
+        getRegularStyle(color: ColorManager.white,fontSize: FontSize.s16),
+      // bodyLarge:
+      //   getRegularStyle(color: ColorManager.grey1),
       bodySmall:
-        getRegularStyle(color: ColorManager.grey)
+        getRegularStyle(color: ColorManager.grey),
+      bodyMedium:
+        getRegularStyle(color: ColorManager.grey2,fontSize: FontSize.s12),
+      labelSmall:
+        getBoldStyle(color: ColorManager.primary,fontSize: FontSize.s12),  
     ),
 
     inputDecorationTheme: InputDecorationTheme(
@@ -73,14 +79,14 @@ ThemeData getApplicationTheme(){
       enabledBorder:
         OutlineInputBorder(
           borderSide: BorderSide(
-            color: ColorManager.primary,width: AppSize.s1_5
+            color: ColorManager.grey,width: AppSize.s1_5
           ),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s8)),
         ),
       focusedBorder:
         OutlineInputBorder(
           borderSide: BorderSide(
-              color: ColorManager.grey,width: AppSize.s1_5
+              color: ColorManager.primary,width: AppSize.s1_5
           ),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s8)),
         ),
