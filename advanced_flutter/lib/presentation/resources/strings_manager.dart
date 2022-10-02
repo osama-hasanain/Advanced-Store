@@ -1,48 +1,69 @@
 class AppStrings{
-  static const noRouteFound = 'No Route Found';
-  static const onBoardingTitle1 = 'SEE THE BEST COURSE #1';
-  static const onBoardingTitle2 = 'SEE THE BEST COURSE #2';
-  static const onBoardingTitle3 = 'SEE THE BEST COURSE #3';
-  static const onBoardingTitle4 = 'SEE THE BEST COURSE #4';
+  static const noRouteFound = 'no_route_found';
+  static const onBoardingTitle1 = 'on_boarding_title1';
+  static const onBoardingTitle2 = 'on_boarding_title2';
+  static const onBoardingTitle3 = 'on_boarding_title3';
+  static const onBoardingTitle4 = 'on_boarding_title4';
 
   static const onBoardingSubTitle1 =
-      'Tut app is an awesome flutter application using clean architecture #1';
+      'on_boarding_desc1';
   static const onBoardingSubTitle2 =
-      'Tut app is an awesome flutter application using clean architecture #2';
+      'on_boarding_desc2';
   static const onBoardingSubTitle3 =
-      'Tut app is an awesome flutter application using clean architecture #3';
+      'on_boarding_desc3';
   static const onBoardingSubTitle4 =
-      'Tut app is an awesome flutter application using clean architecture #4';
+      'on_boarding_desc4';
 
-  static const skip = 'Skip';
-  static const username = 'Username';
-  static const usernameError = 'Please enter your username';
-  static const email = 'Email';
-  static const emailnameError = 'Please enter your email';
-  static const password = 'Passsword';
-  static const passwordError = 'Please enter your password';
-  static const login = 'Login';
-  static const register = 'Register';
-  static const send = 'Send';
-  static const forgetPassword = 'Forget Password';
-  static const registerText = 'Not a remember? Sgin up';
+  static const skip = 'skip';
+  static const username = 'username_hint';
+  static const usernameError = 'username_error';
+  static const email = 'email_hint';
+  static const emailnameError = 'password_error';
+  static const password = 'password_hint';
+  static const passwordError = 'password_error';
+  static const login = 'login_button';
+  static const register = 'register';
+  static const send = 'send';
+  static const forgetPassword = 'forgot_password_text';
+  static const registerText = 'register_text';
 
-  static const loading = 'Loading ..';
-  static const retryAgain = 'Retry Again';
-  static const ok = 'Ok';
-  static const userNameInvaild = "User name should be at least 8 chars";
-  static const emailInvaild = "Email format is wrong";
-  static const mobileNumberInvaild = "Mobile Number should be at least 10 digits";
-  static const passwordInvaild = "Passsword should be at least 6 chars";
-  static const alreadyHaveAccount = "Already have an account ? Login";
-  static const mobileNumber = "Mobile Number";
-  static const profilePicture = "Profile picture";
-  static const photoGallery = "Photo fom gallery";
-  static const photoCamera = "Photo fom camera";
-  static const home = "Home";
-  static const search = "Search";
-  static const notifications = "Notifications";
-  static const settings = "Settings";
-  static const services = "Services";
-  static const stores = "Stores";
+  static const loading = 'loading';
+  static const retryAgain = 'retry_again';
+  static const ok = 'ok';
+  static const userNameInvaild = "username_hint_message";
+  static const emailInvaild = "email_error";
+  static const mobileNumberInvaild = "mobile_number_hint_message";
+  static const passwordInvaild = "password_hint_message";
+  static const alreadyHaveAccount = "already_have_account";
+  static const mobileNumber = "mobile_number_hint";
+  static const profilePicture = "upload_profile_picture";
+  static const photoGallery = "photo_gallery";
+  static const photoCamera = "camera";
+  static const home = "home";
+  static const search = "search";
+  static const notifications = "notification";
+  static const settings = "settings";
+  static const services = "services";
+  static const stores = "stores";
+  static const details = "details";
+  static const aboutStore = "about";
+  static const changeLanguage = "change_language";
+  static const logout = "logout";
+  static const contactUs = "contact_us";
+  static const inviteYourFriends = "invite_your_friends";
+
+  // error handler
+  static const String success = "success";
+  static const String badRequestError = "bad_request_error";
+  static const String noContent = "no_content";
+  static const String forbiddenError = "forbidden_error";
+  static const String unauthorizedError = "unauthorized_error";
+  static const String notFoundError = "not_found_error";
+  static const String conflictError = "conflict_error";
+  static const String internalServerError = "internal_server_error";
+  static const String unknownError = "unknown_error";
+  static const String timeoutError = "timeout_error";
+  static const String defaultError = "default_error";
+  static const String cacheError = "cache_error";
+  static const String noInternetError = "no_internet_error";
 }

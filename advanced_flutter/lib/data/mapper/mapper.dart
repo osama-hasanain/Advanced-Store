@@ -69,6 +69,19 @@ extension StoreResponseMapper on StoreResponse?{
   }
 }
 
+extension StoreDetailsResponseMapper on StoreDetailsResponse?{
+  Store toDomain(){
+    return Store.details(
+      this?.id??Constants.zero,
+      this?.title??Constants.empty,
+      this?.image??Constants.empty,
+      this?.about??Constants.empty,
+      this?.details??Constants.empty,
+      this?.services??Constants.empty,
+    );
+  }
+}
+
 extension HomeResponseMapper on HomeResponse?{
   HomeObject toDomain(){
 

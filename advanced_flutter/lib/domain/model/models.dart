@@ -47,7 +47,9 @@ class Service{
 class Store{
   int id;
   String title,image;
+  String? details,services,about;
   Store(this.id,this.title,this.image);
+  Store.details(this.id,this.title,this.image,this.about,this.details,this.services);
 }
 
 class BannerAd{

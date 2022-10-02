@@ -6,8 +6,8 @@ import 'package:advanced_flutter/presentation/onboarding/view/onboarding_view.da
 import 'package:advanced_flutter/presentation/register/view/register_view.dart';
 import 'package:advanced_flutter/presentation/resources/strings_manager.dart';
 import 'package:advanced_flutter/presentation/splash/splash_view.dart';
-import 'package:advanced_flutter/presentation/store_details/store_details_view.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:advanced_flutter/presentation/store_details/view/store_details_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class Routes{
@@ -39,6 +39,7 @@ class RouteGenerator{
         initHomeModule();
         return MaterialPageRoute(builder: (_)=>const MainView());
       case Routes.storeDetailsRoute:
+        initStoreDetailsModule();
         return MaterialPageRoute(builder: (_)=>const StoreDetailsView());
       default :
         return unDefinedRoute();
@@ -48,9 +49,9 @@ class RouteGenerator{
   static Route<dynamic> unDefinedRoute(){
     return MaterialPageRoute(builder: (_)=>Scaffold(
       appBar: AppBar(
-        title: const Text(AppStrings.noRouteFound),
+        title: const Text(AppStrings.noRouteFound).tr(),
       ),
-      body: const Center(child: Text(AppStrings.noRouteFound),),
+      body:  Center(child: const Text(AppStrings.noRouteFound).tr(),),
     ));
   }
 }

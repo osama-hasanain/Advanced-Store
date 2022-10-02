@@ -188,5 +188,31 @@ class HomeResponse extends BaseResponse{
 
   // TO Json
   Map<String,dynamic> toJson() => _$HomeResponseToJson(this);
+    
+}
+
+@JsonSerializable()
+class StoreDetailsResponse extends BaseResponse{
+  @JsonKey(name: 'image')
+  String? image;
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'title')
+  String? title;
+  @JsonKey(name: 'details')
+  String? details;
+  @JsonKey(name: 'services')
+  String? services;
+  @JsonKey(name: 'about')
+  String? about;
+
+   StoreDetailsResponse();
+  
+   // FROM Json
+  factory StoreDetailsResponse.fromJson(Map<String,dynamic> json) =>
+     _$StoreDetailsResponseFromJson(json);
+
+  // TO Json
+  Map<String,dynamic> toJson() => _$StoreDetailsResponseToJson(this);
   
 }

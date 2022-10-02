@@ -7,6 +7,7 @@ import 'package:advanced_flutter/presentation/resources/routes_manager.dart';
 import 'package:advanced_flutter/presentation/resources/strings_manager.dart';
 import 'package:advanced_flutter/presentation/resources/values_manager.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,24 +48,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _getContentWidget() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _getBannersCarousel(),
-        _getSection(AppStrings.services),
-        _getServices(),
-        _getSection(AppStrings.stores),
-        _getStores(),
-      ],
-    );
-  }
-
-  Widget _getBannersCarousel() {
-    return StreamBuilder<List<BannerAd>>(
-      stream: _viewModel.outputBanners,
-      builder: (context, snapshot) {
-        return _getBannerWidget(snapshot.data);
-      },
+    return StreamBuilder<HomeViewObject>(
+      stream: _viewModel.outputHomeData,
+      builder: (context,snapshot) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _getBannerWidget(snapshot.data?.banners),
+            _getSection(AppStrings.services.tr()),
+            _getServicesWidget(snapshot.data?.services),
+            _getSection(AppStrings.stores.tr()),
+            _getStoresWidget(snapshot.data?.stores),
+          ],
+        );
+      }
     );
   }
 
@@ -111,15 +108,6 @@ class _HomePageState extends State<HomePage> {
         bottom: AppPadding.p2,
       ),
       child: Text(title, style: Theme.of(context).textTheme.labelSmall),
-    );
-  }
-
-  Widget _getServices() {
-    return StreamBuilder<List<Service>>(
-      stream: _viewModel.outputServices,
-      builder: (context, snapshot) {
-        return _getServicesWidget(snapshot.data);
-      },
     );
   }
 
@@ -174,15 +162,6 @@ class _HomePageState extends State<HomePage> {
     } else {
       return Container();
     }
-  }
-
-  Widget _getStores() {
-    return StreamBuilder<List<Store>>(
-      stream: _viewModel.outputStores,
-      builder: (context, snapshot) {
-        return _getStoresWidget(snapshot.data);
-      },
-    );
   }
 
   Widget _getStoresWidget(List<Store>? stores) {

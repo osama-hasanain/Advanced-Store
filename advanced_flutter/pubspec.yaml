@@ -51,6 +51,8 @@ dependencies:
   image_picker: ^0.8.5+3
   rxdart: ^0.27.5
   carousel_slider: ^4.1.1
+  easy_localization: ^3.0.1
+  flutter_phoenix: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -92,6 +94,8 @@ flutter:
    - assets/json/lottie_error.json
    - assets/json/lottie_empty.json
    - assets/json/lottie_success.json
+   - assets/translations/ar-SA.json
+   - assets/translations/en-US.json
 
   #   - images/a_dot_ham.jpeg
 

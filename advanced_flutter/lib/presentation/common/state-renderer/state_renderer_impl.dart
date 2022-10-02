@@ -1,6 +1,7 @@
 import 'package:advanced_flutter/app/constants.dart';
 import 'package:advanced_flutter/presentation/common/state-renderer/state_renderer.dart';
 import 'package:advanced_flutter/presentation/resources/strings_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 abstract class FlowState{
@@ -16,7 +17,7 @@ class LoadingState extends FlowState{
   LoadingState({required this.stateRendererType,String message = AppStrings.loading});
 
   @override
-  String getMessage() => message ?? AppStrings.loading;
+  String getMessage() => message ?? AppStrings.loading.tr();
 
   @override
   StateRendererType getStateRenderType() => stateRendererType;
@@ -83,6 +84,7 @@ extension FlowSateExtension on FlowState{
     switch(runtimeType){
       case LoadingState:
         {
+          dismissDialog(context);
           if(getStateRenderType() == StateRendererType.popupLoadingState)
             {
               //show popup loading
@@ -167,7 +169,7 @@ extension FlowSateExtension on FlowState{
 
    dismissDialog(BuildContext context){
     if(_isCurrentDialogShowing(context)){
-      Navigator.of(context,rootNavigator: true).pop(true);
+      Navigator.of(context,rootNavigator: true).pop();
     }
    }
 

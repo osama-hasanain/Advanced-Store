@@ -8,6 +8,7 @@ import 'package:advanced_flutter/presentation/resources/routes_manager.dart';
 import 'package:advanced_flutter/presentation/resources/strings_manager.dart';
 import 'package:advanced_flutter/presentation/resources/values_manager.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -89,11 +90,11 @@ _bind(){
                         keyboardType: TextInputType.emailAddress,
                         controller:  _userNameController,
                         decoration: InputDecoration(
-                          hintText: AppStrings.username,
-                          labelText: AppStrings.username,
+                          hintText: AppStrings.username.tr(),
+                          labelText: AppStrings.username.tr(),
                           errorText: (snapshot.data ?? true) ?
                                null :
-                               AppStrings.usernameError
+                               AppStrings.usernameError.tr()
                         )
                       );
                     }),
@@ -109,11 +110,11 @@ _bind(){
                         keyboardType: TextInputType.visiblePassword,
                         controller:  _userPasswordController,
                         decoration: InputDecoration(
-                          hintText: AppStrings.password,
-                          labelText: AppStrings.password,
+                          hintText: AppStrings.password.tr(),
+                          labelText: AppStrings.password.tr(),
                           errorText: (snapshot.data ?? true) ?
                                null :
-                               AppStrings.passwordError
+                               AppStrings.passwordError.tr()
                         )
                       );
                     }),
@@ -134,7 +135,7 @@ _bind(){
                           }:null,
                           child: const Text(
                             AppStrings.login
-                          )
+                          ).tr()
                           ),
                       );
                     }),
@@ -153,7 +154,7 @@ _bind(){
                       onPressed: ()=>
                           Navigator.pushNamed(context,Routes.forgetPasswordRoute),
                       child: Text(
-                        AppStrings.forgetPassword,
+                        AppStrings.forgetPassword.tr(),
                         style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.end,
                       ),
@@ -162,7 +163,7 @@ _bind(){
                       onPressed: ()=>
                           Navigator.pushNamed(context,Routes.registerRoute),
                       child: Text(
-                        AppStrings.registerText,
+                        AppStrings.registerText.tr(),
                         style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.end,
                       ),

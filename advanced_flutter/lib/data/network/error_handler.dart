@@ -1,6 +1,8 @@
 import 'package:advanced_flutter/app/constants.dart';
 import 'package:advanced_flutter/data/network/failure.dart';
+import 'package:advanced_flutter/presentation/resources/strings_manager.dart';
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 
 class ErrorHandler implements Exception{
@@ -59,33 +61,33 @@ extension DataSourceExtension on DataSource{
   Failure getFailure(){
     switch(this){
       case DataSource.SUCCESS:
-        return Failure(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
+        return Failure(ResponseCode.SUCCESS, ResponseMessage.SUCCESS.tr());
       case DataSource.NO_CONTENT:
-        return Failure(ResponseCode.NO_CONTENT, ResponseMessage.NO_CONTENT);    
+        return Failure(ResponseCode.NO_CONTENT, ResponseMessage.NO_CONTENT.tr());    
       case DataSource.BAD_REQUEST:
-        return Failure(ResponseCode.BAD_REQUEST, ResponseMessage.BAD_REQUEST); 
+        return Failure(ResponseCode.BAD_REQUEST, ResponseMessage.BAD_REQUEST.tr()); 
       case DataSource.FORBIDDEN:
-        return Failure(ResponseCode.FORBIDDEN, ResponseMessage.FORBIDDEN); 
+        return Failure(ResponseCode.FORBIDDEN, ResponseMessage.FORBIDDEN.tr()); 
       case DataSource.UNAUTORISED:
-        return Failure(ResponseCode.UNAUTORISED, ResponseMessage.UNAUTORISED); 
+        return Failure(ResponseCode.UNAUTORISED, ResponseMessage.UNAUTORISED.tr()); 
       case DataSource.NOT_FOUND:
-        return Failure(ResponseCode.NOT_FOUND, ResponseMessage.NOT_FOUND); 
+        return Failure(ResponseCode.NOT_FOUND, ResponseMessage.NOT_FOUND.tr()); 
       case DataSource.INTERNAL_SERVER_ERROR:
-        return Failure(ResponseCode.INTERNAL_SERVER_ERROR, ResponseMessage.INTERNAL_SERVER_ERROR); 
+        return Failure(ResponseCode.INTERNAL_SERVER_ERROR, ResponseMessage.INTERNAL_SERVER_ERROR.tr()); 
       case DataSource.CONNECT_TIMEOUT:
-        return Failure(ResponseCode.CONNECT_TIMEOUT, ResponseMessage.CONNECT_TIMEOUT); 
+        return Failure(ResponseCode.CONNECT_TIMEOUT, ResponseMessage.CONNECT_TIMEOUT.tr()); 
       case DataSource.CANCEL:
-        return Failure(ResponseCode.CANCEL, ResponseMessage.CANCEL); 
+        return Failure(ResponseCode.CANCEL, ResponseMessage.CANCEL.tr()); 
       case DataSource.RECIEVE_TIMOUT:
-        return Failure(ResponseCode.RECIEVE_TIMOUT, ResponseMessage.RECIEVE_TIMOUT); 
+        return Failure(ResponseCode.RECIEVE_TIMOUT, ResponseMessage.RECIEVE_TIMOUT.tr()); 
       case DataSource.SEND_TIMEOUT:
-        return Failure(ResponseCode.SEND_TIMEOUT, ResponseMessage.SEND_TIMEOUT); 
+        return Failure(ResponseCode.SEND_TIMEOUT, ResponseMessage.SEND_TIMEOUT.tr()); 
       case DataSource.CACHE_ERROR:
-        return Failure(ResponseCode.CACHE_ERROR, ResponseMessage.CACHE_ERROR); 
+        return Failure(ResponseCode.CACHE_ERROR, ResponseMessage.CACHE_ERROR.tr()); 
       case DataSource.NO_INTERNET_CONNECTION:
-        return Failure(ResponseCode.NO_INTERNET_CONNECTION, ResponseMessage.NO_INTERNET_CONNECTION); 
+        return Failure(ResponseCode.NO_INTERNET_CONNECTION, ResponseMessage.NO_INTERNET_CONNECTION.tr()); 
       case DataSource.DEFUALT:
-        return Failure(ResponseCode.DEFUALT, ResponseMessage.DEFUALT); 
+        return Failure(ResponseCode.DEFUALT, ResponseMessage.DEFUALT.tr()); 
     }
   }
 }
@@ -110,22 +112,22 @@ class ResponseCode{
 }
 
 class ResponseMessage{
-  static const String SUCCESS = 'success'; // success with data
-  static const String NO_CONTENT = 'success'; //success with no data(no coennect)
-  static const String BAD_REQUEST = 'Bad request, Try again later';// failure,API rejected request
-  static const String UNAUTORISED = 'User is unaithorised, Try again later';//failure, user is not authorised
-  static const String FORBIDDEN = 'Forbidden request, Try again later' ;// failure,API rejected request 
-  static const String INTERNAL_SERVER_ERROR = 'Some thing went wrong, Try again later'; // failure, crash in server side
-  static const String NOT_FOUND = 'Some thing went wrong, Try again later'; // failure, crash in server side
+  static const String SUCCESS = AppStrings.success; // success with data
+  static const String NO_CONTENT = AppStrings.noContent; //success with no data(no coennect)
+  static const String BAD_REQUEST = AppStrings.badRequestError;// failure,API rejected request
+  static const String UNAUTORISED = AppStrings.unauthorizedError;//failure, user is not authorised
+  static const String FORBIDDEN = AppStrings.forbiddenError ;// failure,API rejected request 
+  static const String INTERNAL_SERVER_ERROR = AppStrings.internalServerError; // failure, crash in server side
+  static const String NOT_FOUND = AppStrings.notFoundError; // failure, crash in server side
 
   //local status code
-  static const String CONNECT_TIMEOUT = 'Time out error, Try again later';
-  static const String CANCEL = 'Request was cancel, Try again later';
-  static const String RECIEVE_TIMOUT = 'Time out error, Try again later';
-  static const String SEND_TIMEOUT = 'Time out error, Try again later';
-  static const String CACHE_ERROR = 'Cache error, Try again later';
-  static const String NO_INTERNET_CONNECTION = 'Please check your internet connection';
-  static const String DEFUALT = 'Some thing went wrong, Try again later';
+  static const String CONNECT_TIMEOUT = AppStrings.timeoutError;
+  static const String CANCEL = AppStrings.defaultError;
+  static const String RECIEVE_TIMOUT =AppStrings.timeoutError;
+  static const String SEND_TIMEOUT = AppStrings.timeoutError;
+  static const String CACHE_ERROR = AppStrings.cacheError;
+  static const String NO_INTERNET_CONNECTION = AppStrings.noInternetError;
+  static const String DEFUALT = AppStrings.defaultError;
 }
 
 class ApiInternalStatus{
